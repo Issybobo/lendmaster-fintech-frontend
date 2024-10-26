@@ -10,7 +10,7 @@ const HeroSection = () => {
         <br></br>
         <br></br>
         <h1 className="text-5xl md:text-7xl font-extrabold leading-tight">
-          Invest & Save for a Brighter Future
+          Invest, Lend & Save for a Brighter Future
         </h1>
         <br></br>
         <p className="text-xl md:text-3xl leading-relaxed max-w-lg">
