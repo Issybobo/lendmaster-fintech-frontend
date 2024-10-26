@@ -10,7 +10,7 @@ const Report = () => {
     const fetchReportData = async () => {
       try {
         const token = localStorage.getItem('token'); // Retrieve token from localStorage
-        const response = await axios.get('http://localhost:5000/api/loan-report', {
+        const response = await axios.get('https://lendmaster-fintech-backend.onrender.com/api/loan-report', {
           headers: {
             Authorization: `Bearer ${token}`, // Pass the token in the request headers
           },

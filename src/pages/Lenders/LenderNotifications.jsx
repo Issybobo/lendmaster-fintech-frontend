@@ -12,7 +12,7 @@ const LenderNotifications = () => {
         try {
             const token = localStorage.getItem('token'); // Get the token from localStorage
             const response = await axios.get(
-                `http://localhost:5000/api/borrower-notification/${userId}`,
+                `https://lendmaster-fintech-backend.onrender.com/api/borrower-notification/${userId}`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`,
@@ -30,7 +30,7 @@ const LenderNotifications = () => {
         try {
             const token = localStorage.getItem('token'); // Get the token from localStorage
             await axios.put(
-                `http://localhost:5000/api/borrower-notification/${notificationId}`,
+                `https://lendmaster-fintech-backend.onrender.com/api/borrower-notification/${notificationId}`,
                 { status: 'read' },
                 {
                     headers: {

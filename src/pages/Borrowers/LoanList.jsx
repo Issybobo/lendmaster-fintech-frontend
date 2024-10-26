@@ -9,7 +9,7 @@ const LoanList = () => {
   useEffect(() => {
     const fetchLoans = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/loans', {
+        const response = await axios.get('https://lendmaster-fintech-backend.onrender.com/api/loans', {
           headers: {
             Authorization: `Bearer ${token}`, // Include token in request headers
           },

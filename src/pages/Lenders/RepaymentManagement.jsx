@@ -10,7 +10,7 @@ const LenderRepaymentManagement = () => {
         const fetchRepayments = async () => {
             try {
                 const token = localStorage.getItem('token'); // Assuming you store the token in localStorage
-                const response = await axios.get('http://localhost:5000/api/repayments', {
+                const response = await axios.get('https://lendmaster-fintech-backend.onrender.com/api/repayments', {
                     headers: {
                         Authorization: `Bearer ${token}`, // Pass the token in the header
                     },
@@ -24,7 +24,7 @@ const LenderRepaymentManagement = () => {
         const fetchTransactions = async () => {
             try {
                 const token = localStorage.getItem('token');
-                const response = await axios.get('http://localhost:5000/api/transactions', {
+                const response = await axios.get('https://lendmaster-fintech-backend.onrender.com/api/transactions', {
                     headers: {
                         Authorization: `Bearer ${token}`, // Pass the token in the header
                     },

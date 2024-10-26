@@ -38,7 +38,7 @@ const LenderProfile = () => {
         e.preventDefault();
         try {
             const token = localStorage.getItem('token'); // Retrieve the token
-            const response = await axios.put('http://localhost:5000/api/lender-profile', profile, {
+            const response = await axios.put('https://lendmaster-fintech-backend.onrender.com/api/lender-profile', profile, {
                 headers: {
                     'Authorization': `Bearer ${token}` // Include the token in the headers
                 }

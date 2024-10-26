@@ -27,7 +27,7 @@ const PaystackPayment = () => {
 
   const verifyPayment = async (reference) => {
     try {
-      const response = await axios.post('http://localhost:5000/api/verify-payment', { reference });
+      const response = await axios.post('https://lendmaster-fintech-backend.onrender.com/api/verify-payment', { reference });
       console.log('Payment verification response:', response.data);
     } catch (error) {
       console.error('Error verifying payment:', error);

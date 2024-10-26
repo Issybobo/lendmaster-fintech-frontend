@@ -16,7 +16,7 @@ const AdminNotifications  = () => {
     const fetchUsers = async () => {
         try {
             const token = localStorage.getItem('token'); // Get token from localStorage (or sessionStorage)
-            const response = await axios.get('http://localhost:5000/api/users', {
+            const response = await axios.get('https://lendmaster-fintech-backend.onrender.com/api/users', {
                 headers: {
                     Authorization: `Bearer ${token}` 
                 }
@@ -31,7 +31,7 @@ const AdminNotifications  = () => {
         e.preventDefault();
         try {
           const token = localStorage.getItem('token');
-          await axios.post('http://localhost:5000/api/borrower-notification', 
+          await axios.post('https://lendmaster-fintech-backend.onrender.com/api/borrower-notification', 
           {
               userId: selectedUser, 
               message: message

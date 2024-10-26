@@ -15,7 +15,7 @@ const InvestingLoan = () => {
       try {
         const token = localStorage.getItem('authToken'); // Ensure the key matches
         console.log('Token:', token); // Log the token value
-        const response = await axios.get('http://localhost:5000/api/loans', {
+        const response = await axios.get('https://lendmaster-fintech-backend.onrender.com/api/loans', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -33,7 +33,7 @@ const InvestingLoan = () => {
     const fetchInvestments = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get('http://localhost:5000/api/investment', {
+        const response = await axios.get('https://lendmaster-fintech-backend.onrender.com/api/investment', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -49,7 +49,7 @@ const InvestingLoan = () => {
   const onSubmit = async (data) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.post('http://localhost:5000/api/investment', data, {
+      await axios.post('https://lendmaster-fintech-backend.onrender.com/api/investment', data, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

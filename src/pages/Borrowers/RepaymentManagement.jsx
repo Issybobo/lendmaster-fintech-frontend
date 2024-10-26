@@ -20,7 +20,7 @@ const RepaymentManagement = () => {
 
   const fetchRepaymentHistory = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/borrower-repayment/${borrowerId}`);
+      const response = await axios.get(`https://lendmaster-fintech-backend.onrender.com/api/borrower-repayment/${borrowerId}`);
       setRepayments(response.data);
     } catch (error) {
       console.error('Error fetching repayment history:', error);
@@ -29,7 +29,7 @@ const RepaymentManagement = () => {
 
   const fetchUpcomingRepayments = async () => {  // Function to fetch upcoming repayments
     try {
-      const response = await axios.get(`http://localhost:5000/api/loans/${borrowerId}/upcoming-repayments`);
+      const response = await axios.get(`https://lendmaster-fintech-backend.onrender.com/api/loans/${borrowerId}/upcoming-repayments`);
       setUpcomingRepayments(response.data);
     } catch (error) {
       console.error('Error fetching upcoming repayments:', error);
@@ -44,7 +44,7 @@ const RepaymentManagement = () => {
     }
 
     try {
-      await axios.post('http://localhost:5000/api/borrower-repayment', { amount, date, loanId, borrowerId });
+      await axios.post('https://lendmaster-fintech-backend.onrender.com/api/borrower-repayment', { amount, date, loanId, borrowerId });
       fetchRepaymentHistory();
       fetchUpcomingRepayments();
       setAmount('');

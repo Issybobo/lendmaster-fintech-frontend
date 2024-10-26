@@ -10,7 +10,7 @@ const SupportManagement = () => {
     const fetchSupportRequests = async () => {
       try {
         const token = localStorage.getItem('token'); // Retrieve token from localStorage
-        const response = await axios.get('http://localhost:5000/api/support', {
+        const response = await axios.get('https://lendmaster-fintech-backend.onrender.com/api/support', {
           headers: {
             Authorization: `Bearer ${token}`, // Pass the token in the request headers
           },
@@ -26,7 +26,7 @@ const SupportManagement = () => {
   const handleStatusChange = async (id, status) => {
     try {
       const token = localStorage.getItem('token'); // Retrieve token from localStorage
-      await axios.patch(`http://localhost:5000/api/support/${id}`, { status }, {
+      await axios.patch(`https://lendmaster-fintech-backend.onrender.com/api/support/${id}`, { status }, {
         headers: {
           Authorization: `Bearer ${token}`, // Pass the token in the request headers
         },

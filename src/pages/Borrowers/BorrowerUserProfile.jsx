@@ -13,7 +13,7 @@ const UserProfile = () => {
         const fetchUserData = async () => {
             try {
                 const token = localStorage.getItem('token');
-                const response = await axios.get('http://localhost:5000/api/users/profile', {
+                const response = await axios.get('https://lendmaster-fintech-backend.onrender.com/api/users/profile', {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
@@ -38,7 +38,7 @@ const UserProfile = () => {
         e.preventDefault();
         try {
             const token = localStorage.getItem('token');
-            await axios.put('http://localhost:5000/api/users/profile', user, {
+            await axios.put('https://lendmaster-fintech-backend.onrender.com/api/users/profile', user, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }

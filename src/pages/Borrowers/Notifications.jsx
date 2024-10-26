@@ -1,5 +1,5 @@
-//httpp for borrower notification for post :  http://localhost:5000/api/borrower-notification
-// for put :  http://localhost:5000/api/borrower-notification/${:notificationId}
+//httpp for borrower notification for post :  https://lendmaster-fintech-backend.onrender.com/api/borrower-notification
+// for put :  https://lendmaster-fintech-backend.onrender.com/api/borrower-notification/${:notificationId}
 
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -15,7 +15,7 @@ const Notifications = ({ userId }) => {
     const fetchNotifications = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get(`http://localhost:5000/api/borrower-notification/${userId}`);
+        const response = await axios.get(`https://lendmaster-fintech-backend.onrender.com/api/borrower-notification/${userId}`);
         setNotifications(response.data);
       } catch (error) {
         toast.error('Failed to fetch notifications');
@@ -28,7 +28,7 @@ const Notifications = ({ userId }) => {
   const handleMarkAsRead = async (notificationId) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.put(`http://localhost:5000/api/borrower-notification/${notificationId}`, 
+      await axios.put(`https://lendmaster-fintech-backend.onrender.com/api/borrower-notification/${notificationId}`, 
       { status: 'read' }, 
       { headers: { Authorization: `Bearer ${token}` } });
       setNotifications(notifications.map(n => 

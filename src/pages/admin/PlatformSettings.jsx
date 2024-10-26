@@ -14,7 +14,7 @@ const PlatformSettings = () => {
 
     useEffect(() => {
         // Fetch current settings on component mount
-        axios.get('http://localhost:5000/api/settings')
+        axios.get('https://lendmaster-fintech-backend.onrender.com/api/settings')
             .then(response => {
                 setSettings(response.data);
             })
@@ -27,7 +27,7 @@ const PlatformSettings = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.put('http://localhost:5000/api/settings', settings)
+        axios.put('https://lendmaster-fintech-backend.onrender.com/api/settings', settings)
             .then(response => {
                 toast.success('Settings updated successfully!');
             })

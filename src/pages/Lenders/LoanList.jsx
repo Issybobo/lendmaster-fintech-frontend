@@ -13,7 +13,7 @@ const LenderLoanList = () => {
         const fetchLoans = async () => {
             try {
                 const token = localStorage.getItem('token'); // Get the token
-                const response = await axios.get('http://localhost:5000/api/loans', {
+                const response = await axios.get('https://lendmaster-fintech-backend.onrender.com/api/loans', {
                     headers: {
                         Authorization: `Bearer ${token}` // Include the token
                     }

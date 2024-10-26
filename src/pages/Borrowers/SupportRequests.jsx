@@ -11,7 +11,7 @@ const SupportRequests = () => {
   useEffect(() => {
     const fetchRequests = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/support/requests');
+        const response = await axios.get('https://lendmaster-fintech-backend.onrender.com/api/support/requests');
         setRequests(response.data);
         setLoading(false);
       } catch (error) {
@@ -22,7 +22,7 @@ const SupportRequests = () => {
 
     const fetchFaqs = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/support/faqs');
+        const response = await axios.get('https://lendmaster-fintech-backend.onrender.com/api/support/faqs');
         setFaqs(response.data);
       } catch (error) {
         console.error('Error fetching FAQs:', error);
@@ -36,7 +36,7 @@ const SupportRequests = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/support', { text: requestText });
+      await axios.post('https://lendmaster-fintech-backend.onrender.com/api/support', { text: requestText });
       setRequestText('');
       setRequests([...requests, { text: requestText, status: 'Pending' }]);
     } catch (error) {

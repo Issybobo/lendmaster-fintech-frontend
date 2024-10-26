@@ -17,7 +17,7 @@ function AdminDashboard() {
         const token = localStorage.getItem('token');
 
         // Fetch loans data with token
-        const loansResponse = await axios.get('http://localhost:5000/api/admin/loans', {
+        const loansResponse = await axios.get('https://lendmaster-fintech-backend.onrender.com/api/admin/loans', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -27,7 +27,7 @@ function AdminDashboard() {
         const activeLoans = loans.filter(loan => loan.status === 'active').length;
 
         // Fetch users data with token
-        const usersResponse = await axios.get('http://localhost:5000/api/admin/users', {
+        const usersResponse = await axios.get('https://lendmaster-fintech-backend.onrender.com/api/admin/users', {
           headers: {
             Authorization: `Bearer ${token}`,
           },

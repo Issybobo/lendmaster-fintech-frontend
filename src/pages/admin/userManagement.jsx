@@ -13,7 +13,7 @@ const UserManagement = () => {
     const fetchUsers = async () => {
         try {
             const token = localStorage.getItem('token'); // Get token from localStorage (or sessionStorage)
-            const response = await axios.get('http://localhost:5000/api/users', {
+            const response = await axios.get('https://lendmaster-fintech-backend.onrender.com/api/users', {
                 headers: {
                     Authorization: `Bearer ${token}` // Add the token in the Authorization header
                 }
@@ -28,7 +28,7 @@ const UserManagement = () => {
     const updateUserRole = async (id, role) => {
         try {
             const token = localStorage.getItem('token');
-            await axios.put(`http://localhost:5000/api/users/${id}/role`, { role }, { 
+            await axios.put(`https://lendmaster-fintech-backend.onrender.com/api/users/${id}/role`, { role }, { 
                 headers: {
                     Authorization: `Bearer ${token}` // Add the token in the Authorization header
                 }
@@ -42,7 +42,7 @@ const UserManagement = () => {
     const toggleUserActivation = async (id) => {
         try {
             const token = localStorage.getItem('token');
-            await axios.put(`http://localhost:5000/api/users/${id}/activation`, {}, {
+            await axios.put(`https://lendmaster-fintech-backend.onrender.com/api/users/${id}/activation`, {}, {
                 headers: {
                     Authorization: `Bearer ${token}` // Add the token in the Authorization header
                 }
@@ -56,7 +56,7 @@ const UserManagement = () => {
     const deleteUser = async (id) => {
         try {
             const token = localStorage.getItem('token');
-            await axios.delete(`http://localhost:5000/api/users/${id}`, {
+            await axios.delete(`https://lendmaster-fintech-backend.onrender.com/api/users/${id}`, {
                 headers: {
                     Authorization: `Bearer ${token}` // Add the token in the Authorization header
                 }

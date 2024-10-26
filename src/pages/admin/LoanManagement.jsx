@@ -13,7 +13,7 @@ const LoanManagement = () => {
   const fetchLoans = async () => {
     try {
       const token = localStorage.getItem('token'); // Assuming you store the token in localStorage
-      const response = await axios.get('http://localhost:5000/api/loans', {
+      const response = await axios.get('https://lendmaster-fintech-backend.onrender.com/api/loans', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -28,7 +28,7 @@ const LoanManagement = () => {
   const handleApprove = async (id) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.put(`http://localhost:5000/api/loans/${id}/approve`, {}, {
+      await axios.put(`https://lendmaster-fintech-backend.onrender.com/api/loans/${id}/approve`, {}, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -42,7 +42,7 @@ const LoanManagement = () => {
   const handleReject = async (id) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.put(`http://localhost:5000/api/loans/${id}/reject`, {}, {
+      await axios.put(`https://lendmaster-fintech-backend.onrender.com/api/loans/${id}/reject`, {}, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -56,7 +56,7 @@ const LoanManagement = () => {
   const handleMarkAsPaid = async (id) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.put(`http://localhost:5000/api/loans/${id}/markAsPaid`, {}, {
+      await axios.put(`https://lendmaster-fintech-backend.onrender.com/api/loans/${id}/markAsPaid`, {}, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
